@@ -16,14 +16,42 @@
         <header>
             <h1>Covid-19</h1>
         </header>
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
 				<div class="corona-update col-6">
+					<div class="covid-header">
+						<h2>COVID-19 CORONAVIRUS PANDEMIC</h2>
+						<p id="last-update">Last Updated: </p>
+					</div>
 					<div class="global">
-	
+						<h3>GLOBAL:</h3>
+						<a href="#" class="toggle-global" id="overall-global-btn" onclick="$(this).toggleGlobal('.overall-global','.today-global','#today-global-btn');">Overall</a>
+						<a href="#" class="toggle-global pressed" id="today-global-btn" onclick="$(this).toggleGlobal('.today-global','.overall-global','#overall-global-btn');">Today</a>
+						<div class="overall-global">
+							<p>Cases: <span id="total-cases"></span></p>
+							<p>Deaths: <span id="total-deaths"></span></p>
+							<p>Recovered: <span id="total-recovered"></span></p>
+						</div>
+						<div class="today-global hide">
+							<p>Cases: <span id="today-cases"></span></p>
+							<p>Deaths: <span id="today-deaths"></span></p>
+							<p>Recovered: <span id="today-recovered"></span></p>
+						</div>
 					</div>
 					<div class="countries">
+						<h3>COUNTRY:</h3>
+						<input type="text" class="search" placeholder="Country">
 						<ul id="countries-list"></ul>
+						<div class="overall-country">
+							<p>Cases: <span id="total-country-cases"></span></p>
+							<p>Deaths: <span id="total-country-deaths"></span></p>
+							<p>Recovered: <span id="total-country-recovered"></span></p>
+						</div>
+						<div class="today-country">
+							<p>Cases: <span id="today-country-cases"></span></p>
+							<p>Deaths: <span id="today-country-deaths"></span></p>
+							<p>Recovered: <span id="today-country-recovered"></span></p>
+						</div>
 					</div>
 				</div>
 			</div>
