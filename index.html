@@ -2,60 +2,72 @@
 <html>
 	<head>
 		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="Tech/scripts.js"></script>
 		<link rel="stylesheet" href="https://use.typekit.net/oko0lpk.css">
 		<link rel="stylesheet" href="Tech/style.css" type="text/css">
   		<title>
-			Title of Newspaper - Covid-19
+			Covid-19
 		</title>
 	</head>
 
 	<body>
-        <header>
-            <h1>Covid-19</h1>
-        </header>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="corona-update col-6">
-					<div class="covid-header">
-						<h2>COVID-19 CORONAVIRUS PANDEMIC</h2>
-						<p id="last-update">Last Updated: </p>
+				<div class="nav col-sm-2 col-12">
+					<img src="Media/covid-logo.png" id="logo">
+					<div class="nav-contents">
+						<ul>
+							<li><a href="#">COVID-19 Updates</a></li>
+							<li><a href="#">next topic</a></li>
+							<li><a href="#">next topic</a></li>
+						</ul>
 					</div>
-					<div class="global">
-						<h3>GLOBAL:</h3>
-						<a href="#" class="toggle-global" id="overall-global-btn" onclick="$(this).toggleGlobal('.overall-global','.today-global','#today-global-btn');">Overall</a>
-						<a href="#" class="toggle-global pressed" id="today-global-btn" onclick="$(this).toggleGlobal('.today-global','.overall-global','#overall-global-btn');">Today</a>
-						<div class="overall-global">
-							<p>Cases: <span id="total-cases"></span></p>
-							<p>Deaths: <span id="total-deaths"></span></p>
-							<p>Recovered: <span id="total-recovered"></span></p>
+				</div>
+				<div class="content col-sm-10 col-12">
+					<div class="corona-update">
+						<div class="covid-header">
+							<h2>COVID-19 PANDEMIC</h2>
+							<p>Last Updated: <span id="last-update"></span> UTC</p>
 						</div>
-						<div class="today-global hide">
-							<p>Cases: <span id="today-cases"></span></p>
-							<p>Deaths: <span id="today-deaths"></span></p>
-							<p>Recovered: <span id="today-recovered"></span></p>
-						</div>
-					</div>
-					<div class="countries">
-						<h3>COUNTRY:</h3>
-						<input type="text" class="search" placeholder="Country">
-						<ul id="countries-list"></ul>
-						<div class="overall-country">
-							<p>Cases: <span id="total-country-cases"></span></p>
-							<p>Deaths: <span id="total-country-deaths"></span></p>
-							<p>Recovered: <span id="total-country-recovered"></span></p>
-						</div>
-						<div class="today-country">
-							<p>Cases: <span id="today-country-cases"></span></p>
-							<p>Deaths: <span id="today-country-deaths"></span></p>
-							<p>Recovered: <span id="today-country-recovered"></span></p>
+						<div class="row">
+							<div class="global col-6">
+								<h3>GLOBAL:</h3>
+								<a href="#" class="toggle-global" id="overall-global-btn" onclick="$(this).toggleGlobal('.overall-global','.today-global','#today-global-btn');">Overall</a>
+								<a href="#" class="toggle-global pressed" id="today-global-btn" onclick="$(this).toggleGlobal('.today-global','.overall-global','#overall-global-btn');">Today</a>
+								<div class="data overall-global">
+									<p>Cases: <span id="total-cases"></span></p>
+									<p>Deaths: <span id="total-deaths"></span></p>
+									<p>Recovered: <span id="total-recovered"></span></p>
+								</div>
+								<div class="data today-global hide">
+									<p>Cases: <span id="today-cases"></span></p>
+									<p>Deaths: <span id="today-deaths"></span></p>
+									<p>Recovered: <span id="today-recovered"></span></p>
+								</div>
+							</div>
+							<div class="countries col-6">
+								<h3>COUNTRY:</h3>
+								<input type="text" class="search" placeholder="Country">
+								<ul id="countries-list"></ul>
+								<a href="#" class="toggle-country" id="overall-country-btn" onclick="$(this).toggleGlobal('.overall-country','.today-country','#today-country-btn');">Overall</a>
+								<a href="#" class="toggle-country pressed" id="today-country-btn" onclick="$(this).toggleGlobal('.today-country','.overall-country','#overall-country-btn');">Today</a>
+								<div class="data overall-country">
+									<p>Cases: <span id="total-country-cases"></span></p>
+									<p>Deaths: <span id="total-country-deaths"></span></p>
+									<p>Recovered: <span id="total-country-recovered"></span></p>
+								</div>
+								<div class="data today-country hide">
+									<p>Cases: <span id="today-country-cases"></span></p>
+									<p>Deaths: <span id="today-country-deaths"></span></p>
+									<p>Recovered: <span id="today-country-recovered"></span></p>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col-6"></div>
         </div>
 	</body>
 </html>

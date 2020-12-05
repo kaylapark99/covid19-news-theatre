@@ -9,15 +9,45 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    font-family: bebas-neue-pro, sans-serif;
 }
 
-header {
-    font-family: 'amador', sans-serif;
-}
-
-.container {
+.container-fluid {
     width: 100vw;
     height: 100%;
+}
+
+.nav {
+    background-color: #000027;
+    height: 100vh;
+    color: #ebebff;
+}
+
+#logo {
+    width: 85%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+
+.nav-contents {
+    position: absolute;
+    bottom: 30px;
+}
+
+.nav-contents li {
+    list-style: none;
+    font-size: 40px;
+}
+
+.nav-contents li a {
+    color: #ebebff;
+    opacity: 0.5;
+}
+
+.nav-contents li a:hover {
+    opacity: 1;
+    text-decoration: none;
 }
 
 .hide {
@@ -28,13 +58,48 @@ header {
     opacity: 0.5;
 }
 
-.toggle-global:hover {
-    opacity: 1;
-    text-decoration: none;
+.corona-update {
+    text-align: center;
+    padding: 30px;
 }
 
-.corona-update {
-    border: 5px solid red;
+.covid-header h2 {
+    font-size: 100px;
+    color: #00004e;
+}
+
+.covid-header p {
+    font-size: 25px;
+}
+
+.global, .countries {
+    text-align: justify;
+    padding-top: 30px;
+}
+
+.global h3, .countries h3 {
+    color: #4545ba;
+    font-size: 60px;
+}
+
+.data {
+    padding-top: 25px;
+    font-size: 20px;;
+}
+
+.countries input {
+    background-color: #d8d8ff;
+    border-radius: 2px;
+}
+
+.toggle-global, .toggle-country {
+    color: #6262ff;
+}
+
+.toggle-global:hover, .toggle-country:hover {
+    color: #2727ff;
+    opacity: 1;
+    text-decoration: none;
 }
 
 #countries-list, .search {
@@ -51,11 +116,7 @@ header {
     width: 100%;
     text-decoration: none;
     color: black;
-}
-
-#countries-list li a {
-    text-decoration: none;
-    color: black;
+    cursor: pointer;
 }
 
 #countries-list li:hover {
