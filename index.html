@@ -28,41 +28,45 @@
 				<div class="content col-sm-10 col-12">
 					<div class="corona-update">
 						<div class="covid-header">
-							<h2>COVID-19 PANDEMIC</h2>
+							<h2>COVID-19 PANDEMIC UPDATES</h2>
 							<p>Last Updated: <span id="last-update"></span> UTC</p>
 						</div>
 						<div class="row">
-							<div class="global col-6">
-								<h3>GLOBAL:</h3>
-								<a href="#" class="toggle-global" id="overall-global-btn" onclick="$(this).toggleGlobal('.overall-global','.today-global','#today-global-btn');">Overall</a>
-								<a href="#" class="toggle-global pressed" id="today-global-btn" onclick="$(this).toggleGlobal('.today-global','.overall-global','#overall-global-btn');">Today</a>
-								<div class="data overall-global">
-									<p>Cases: <span id="total-cases"></span></p>
-									<p>Deaths: <span id="total-deaths"></span></p>
-									<p>Recovered: <span id="total-recovered"></span></p>
-								</div>
-								<div class="data today-global hide">
-									<p>Cases: <span id="today-cases"></span></p>
-									<p>Deaths: <span id="today-deaths"></span></p>
-									<p>Recovered: <span id="today-recovered"></span></p>
+							<div class="col-4">
+								<div class="global">
+									<h3>GLOBAL:</h3>
+									<a href="#" class="toggle-global" id="overall-global-btn" onclick="$(this).toggleGlobal('.overall-global','.today-global','#today-global-btn');">Overall</a>
+									<a href="#" class="toggle-global pressed" id="today-global-btn" onclick="$(this).toggleGlobal('.today-global','.overall-global','#overall-global-btn');">Today</a>
+									<div class="data overall-global">
+										<p>Cases: <span id="total-cases"></span></p>
+										<p>Deaths: <span id="total-deaths"></span></p>
+										<p>Recovered: <span id="total-recovered"></span></p>
+									</div>
+									<div class="data today-global hide">
+										<p>Cases: <span id="today-cases"></span></p>
+										<p>Deaths: <span id="today-deaths"></span></p>
+										<p>Recovered: <span id="today-recovered"></span></p>
+									</div>
+								</div><div class="countries">
+									<h3>COUNTRY:</h3>
+									<input type="text" class="search" placeholder="Country">
+									<ul id="countries-list"></ul>
+									<a href="#" class="toggle-country" id="overall-country-btn" onclick="$(this).toggleGlobal('.overall-country','.today-country','#today-country-btn');">Overall</a>
+									<a href="#" class="toggle-country pressed" id="today-country-btn" onclick="$(this).toggleGlobal('.today-country','.overall-country','#overall-country-btn');">Today</a>
+									<div class="data overall-country">
+										<p>Cases: <span id="total-country-cases"></span></p>
+										<p>Deaths: <span id="total-country-deaths"></span></p>
+										<p>Recovered: <span id="total-country-recovered"></span></p>
+									</div>
+									<div class="data today-country hide">
+										<p>Cases: <span id="today-country-cases"></span></p>
+										<p>Deaths: <span id="today-country-deaths"></span></p>
+										<p>Recovered: <span id="today-country-recovered"></span></p>
+									</div>
 								</div>
 							</div>
-							<div class="countries col-6">
-								<h3>COUNTRY:</h3>
-								<input type="text" class="search" placeholder="Country">
-								<ul id="countries-list"></ul>
-								<a href="#" class="toggle-country" id="overall-country-btn" onclick="$(this).toggleGlobal('.overall-country','.today-country','#today-country-btn');">Overall</a>
-								<a href="#" class="toggle-country pressed" id="today-country-btn" onclick="$(this).toggleGlobal('.today-country','.overall-country','#overall-country-btn');">Today</a>
-								<div class="data overall-country">
-									<p>Cases: <span id="total-country-cases"></span></p>
-									<p>Deaths: <span id="total-country-deaths"></span></p>
-									<p>Recovered: <span id="total-country-recovered"></span></p>
-								</div>
-								<div class="data today-country hide">
-									<p>Cases: <span id="today-country-cases"></span></p>
-									<p>Deaths: <span id="today-country-deaths"></span></p>
-									<p>Recovered: <span id="today-country-recovered"></span></p>
-								</div>
+							<div class="graph col-8">
+								<iframe src="https://ourworldindata.org/grapher/total-deaths-covid-19" style="width: 100%; height: 600px; border: 3px solid;"></iframe>
 							</div>
 						</div>
 					</div>

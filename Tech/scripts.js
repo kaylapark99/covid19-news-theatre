@@ -1,4 +1,12 @@
 $(document).ready(function(){
+    var countryCodes = {}
+
+    // json file from https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes
+    $.getJSON("Tech/slim-3.json",function(data){
+        for(c in data) {
+            countryCodes[data[c]['name']] = data[c]['alpha-3'];
+        }
+    });
 
     $.ajax({
         url: "https://api.covid19api.com/summary",
@@ -57,7 +65,7 @@ $(document).ready(function(){
             //display dropdown menu
             function displayCountries() {
                 var searchCountries = findCountries(this.value);
-                html = searchCountries.map(c => {
+                var html = searchCountries.map(c => {
                     if(this.value == '' || findIndex(this.value) != -1) {
                         return ``
                     }
@@ -76,6 +84,13 @@ $(document).ready(function(){
             inputCountry.on('keyup',displayCountries);
             inputCountry.on('paste',displayCountries);
 
+            function updateGraph(cIndex){
+                var htmlFirst = '<iframe src="https://ourworldindata.org/grapher/total-deaths-covid-19?country='
+                var htmlLast = '" style="width: 100%; height: 600px; border: 3px solid;"></iframe>'
+                var htmlAlpha = countryCodes[countries[cIndex]]
+                $('.graph').html(htmlFirst+htmlAlpha+htmlLast);
+            }
+
             //update results based off of selected country 
             function updateCountryData(cIndex) {
                 var countryData = data['Countries'][cIndex];
@@ -87,6 +102,7 @@ $(document).ready(function(){
                 $("#today-country-recovered").html(countryData['NewRecovered'].toLocaleString());
                 $('#countries-list').html(''); 
                 $('.search').val(data['Countries'][cIndex]['Country']);
+                updateGraph(cIndex);
             }
 
             //check to see if input is a country

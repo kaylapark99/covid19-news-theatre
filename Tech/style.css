@@ -24,9 +24,10 @@ body {
 }
 
 #logo {
-    width: 85%;
+    width: 80%;
     position: absolute;
     left: 50%;
+    margin-top: 30px;
     transform: translate(-50%,0);
 }
 
@@ -37,7 +38,7 @@ body {
 
 .nav-contents li {
     list-style: none;
-    font-size: 40px;
+    font-size: 35px;
 }
 
 .nav-contents li a {
@@ -60,11 +61,12 @@ body {
 
 .corona-update {
     text-align: center;
-    padding: 30px;
+    padding: 30px 80px;
 }
 
 .covid-header h2 {
     font-size: 100px;
+    border-bottom: 10px solid #00004e;
     color: #00004e;
 }
 
@@ -94,6 +96,8 @@ body {
 
 .toggle-global, .toggle-country {
     color: #6262ff;
+    font-size: 25px;
+    padding-right: 10px;
 }
 
 .toggle-global:hover, .toggle-country:hover {
