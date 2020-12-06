@@ -9,6 +9,15 @@ $(document).ready(function(){
     });
 
     $.ajax({
+        url: "http://newsapi.org/v2/top-headlines?q=bitcoin&from=2020-11-06&sortBy=publishedAt&apiKey=19d8094c630f45c9adce4bac5b859218",
+        type: "GET",
+        datatype: 'jsonp',
+        success: function(data) {
+            console.log(data);
+        }
+    });
+
+    $.ajax({
         url: "https://api.covid19api.com/summary",
         type: "GET",
         beforeSend: function(xhr){xhr.setRequestHeader('x-access-token', '5cf9dfd5-3449-485e-b5ae-70a60e997864');
