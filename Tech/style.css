@@ -4,11 +4,9 @@ html {
 
 body {
     width: 100vw;
-    height: 100vh;
-    font-size: 100%;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
-    overflow: hidden;
     font-family: bebas-neue-pro, sans-serif;
 }
 
@@ -19,8 +17,10 @@ body {
 
 .nav {
     background-color: #000027;
-    height: 100vh;
     color: #ebebff;
+    min-height: 100vh;
+    width: 100%;
+    padding: 0;
 }
 
 .clicked {
@@ -35,14 +35,22 @@ body {
     transform: translate(-50%,0);
 }
 
+.nav-container {
+    position: fixed;
+    height: 100vh;
+    width: inherit;
+    max-width: inherit;
+}
+
 .nav-contents {
-    position: absolute;
+    position: relative;
+    top: 90%;
     bottom: 30px;
 }
 
 .nav-contents li {
     list-style: none;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .nav-contents li a {
@@ -78,9 +86,13 @@ body {
     font-size: 25px;
 }
 
+.covid-update-data {
+    padding-top: 70px;
+}
+
 .global, .countries {
     text-align: justify;
-    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .global h3, .countries h3 {
@@ -110,8 +122,12 @@ body {
     text-decoration: none;
 }
 
+.country-search {
+    max-width: 80%;
+}
+
 #countries-list, .search {
-    width: 250px;
+    width: 100%;
 }
 
 #countries-list {
@@ -121,7 +137,6 @@ body {
 }
 
 #countries-list li {
-    width: 100%;
     text-decoration: none;
     color: black;
     cursor: pointer;

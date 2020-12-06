@@ -16,13 +16,15 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="nav col-sm-2 col-12">
-					<img src="Media/covid-logo.png" id="logo">
-					<div class="nav-contents">
-						<ul>
-							<li><a class="clicked">COVID-19 Updates</a></li>
-							<li><a href="vaccine.html">Vaccine</a></li>
-							<li><a href="#">next topic</a></li>
-						</ul>
+					<div class="nav-container">
+						<img src="Media/covid-logo.png" id="logo">
+						<div class="nav-contents">
+							<ul>
+								<li><a class="clicked">COVID-19 Updates</a></li>
+								<li><a href="vaccine.html">Vaccine</a></li>
+								<li><a href="#">next topic</a></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 				<div class="content col-sm-10 col-12">
@@ -31,7 +33,7 @@
 							<h2>COVID-19 PANDEMIC UPDATES</h2>
 							<p>Last Updated: <span id="last-update"></span> UTC</p>
 						</div>
-						<div class="row">
+						<div class="covid-update-data row">
 							<div class="col-4">
 								<div class="global">
 									<h3>GLOBAL:</h3>
@@ -49,8 +51,10 @@
 									</div>
 								</div><div class="countries">
 									<h3>COUNTRY:</h3>
-									<input type="text" class="search" placeholder="Country">
-									<ul id="countries-list"></ul>
+									<div class="country-search">
+										<input type="text" class="search" placeholder="Country">
+										<ul id="countries-list"></ul>
+									</div>
 									<a href="#" class="toggle-country" id="overall-country-btn" onclick="$(this).toggleGlobal('.overall-country','.today-country','#today-country-btn');">Overall</a>
 									<a href="#" class="toggle-country pressed" id="today-country-btn" onclick="$(this).toggleGlobal('.today-country','.overall-country','#overall-country-btn');">Today</a>
 									<div class="data overall-country">

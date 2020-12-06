@@ -7,7 +7,7 @@ $(document).ready(function(){
             countryCodes[data[c]['name']] = data[c]['alpha-3'];
         }
     });
-
+/*
     $.ajax({
         url: "http://newsapi.org/v2/top-headlines?q=bitcoin&from=2020-11-06&sortBy=publishedAt&apiKey=19d8094c630f45c9adce4bac5b859218",
         type: "GET",
@@ -15,7 +15,7 @@ $(document).ready(function(){
         success: function(data) {
             console.log(data);
         }
-    });
+    });*/
 
     $.ajax({
         url: "https://api.covid19api.com/summary",
