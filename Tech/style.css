@@ -28,7 +28,7 @@ body {
 }
 
 #logo {
-    width: 80%;
+    width: 70%;
     position: absolute;
     left: 50%;
     margin-top: 30px;
@@ -71,10 +71,6 @@ body {
     opacity: 0.5;
 }
 
-.corona-update {
-    text-align: center;
-    padding: 30px 80px;
-}
 
 .covid-header h2 {
     font-size: 70px;
@@ -144,4 +140,70 @@ body {
 
 #countries-list li:hover {
     background-color: #A9A9A9;
+}
+
+.content {
+    padding: 40px;
+}
+
+.vaccine-header h1 {
+    font-size: 100px;
+    border-bottom: 10px solid #000027;
+}
+
+.featured, .latest {
+    margin-top: 50px;
+}
+
+.featured h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.middle-article {
+    border-right: 3px solid #000027;
+    border-left: 3px solid #000027;
+}
+
+.article-hover {
+    position: relative;
+}
+
+.article-preview {
+    position: absolute;
+    width: 100%;
+    height: 0;
+    bottom: 0;
+    font-size: 20px;
+    color: #ebebff;
+    overflow: hidden;
+    background-color: #00004e;
+    opacity: 0.85;
+    transition: .5s ease;
+}
+
+.article-header {
+    min-height: 100px;
+}
+
+.hover-text {
+    position: absolute;
+    width: 100%;
+    padding: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+}
+
+.hover-text a {
+    color: #ebebff;
+    font-weight: 600;
+}
+
+.article-hover:hover .article-preview {
+    height: 100%;
+}
+ 
+.featured-img {
+    width: 100%;
 }
