@@ -43,14 +43,14 @@ body {
 }
 
 .nav-contents {
-    position: relative;
-    top: 90%;
-    bottom: 30px;
+    position: absolute;
+    margin-bottom: 20px;
+    bottom: 0;
 }
 
 .nav-contents li {
     list-style: none;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .nav-contents li a {
@@ -189,15 +189,24 @@ body {
 .hover-text {
     position: absolute;
     width: 100%;
+    height: 100%;
     padding: 20px;
     left: 50%;
     transform: translate(-50%, 0);
     -ms-transform: translate(-50%, 0);
 }
 
+.article-text-container {
+    height: 95%;
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
 .hover-text a {
     color: #ebebff;
     font-weight: 600;
+    position: absolute;
+    bottom: 5%;
 }
 
 .article-hover:hover .article-preview {
