@@ -7,15 +7,24 @@ $(document).ready(function(){
             countryCodes[data[c]['name']] = data[c]['alpha-3'];
         }
     });
-/*
-    $.ajax({
-        url: "http://newsapi.org/v2/top-headlines?q=bitcoin&from=2020-11-06&sortBy=publishedAt&apiKey=19d8094c630f45c9adce4bac5b859218",
-        type: "GET",
-        dataType: 'jsonp',
-        success: function(data) {
-            console.log(data);
-        }
-    });*/
+
+    var newsApiKey = 't8rFTHnPj3cUNdeQhfS0Br8ZEY1UuwCG2E98J5wrg05uXqUj';
+
+    function latestArticles(search){
+        alert('hi');
+        $.ajax({
+            url: "https://api.currentsapi.services/v1/search?",
+            data: {
+                'apiKey': newsApiKey,
+                'keywords': search,
+                'language': 'en'
+            },
+            type: "GET",
+            success: function(data) {
+                console.log(data);
+            }
+        });
+    }
 
     $.ajax({
         url: "https://api.covid19api.com/summary",

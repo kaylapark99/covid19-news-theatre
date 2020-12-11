@@ -146,13 +146,17 @@ body {
     padding: 40px;
 }
 
-.vaccine-header h1 {
+.page-header h1 {
     font-size: 100px;
     border-bottom: 10px solid #000027;
 }
 
 .featured, .latest {
-    margin-top: 50px;
+    padding: 50px 0;
+}
+
+.featured {
+    border-bottom: 4px solid #000027;
 }
 
 .featured h2 {
@@ -165,35 +169,16 @@ body {
     border-left: 3px solid #000027;
 }
 
-.article-hover {
-    position: relative;
-}
-
-.article-preview {
-    position: absolute;
-    width: 100%;
-    height: 0;
-    bottom: 0;
-    font-size: 20px;
-    color: #ebebff;
-    overflow: hidden;
-    background-color: #00004e;
-    opacity: 0.85;
-    transition: .5s ease;
-}
-
-.article-header {
-    min-height: 100px;
-}
 
 .hover-text {
     position: absolute;
-    width: 100%;
-    height: 100%;
     padding: 20px;
+    height: 100%;
+    width: 100%;
     left: 50%;
     transform: translate(-50%, 0);
     -ms-transform: translate(-50%, 0);
+    color: white;
 }
 
 .article-text-container {
@@ -209,10 +194,22 @@ body {
     bottom: 5%;
 }
 
-.article-hover:hover .article-preview {
+.overlay {
+    position: absolute;
     height: 100%;
+    left: 15px;
+    right: 15px;
+    opacity: 0;
+    transition: 0.5s ease;
+    background-color: #00004e;
 }
- 
+
+.article-hover:hover .overlay{
+    opacity: 1;
+}
+
+
+
 .featured-img {
     width: 100%;
 }
