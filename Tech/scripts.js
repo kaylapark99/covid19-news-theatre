@@ -7,25 +7,7 @@ $(document).ready(function(){
             countryCodes[data[c]['name']] = data[c]['alpha-3'];
         }
     });
-
-    var newsApiKey = 't8rFTHnPj3cUNdeQhfS0Br8ZEY1UuwCG2E98J5wrg05uXqUj';
-
-    function latestArticles(search){
-        alert('hi');
-        $.ajax({
-            url: "https://api.currentsapi.services/v1/search?",
-            data: {
-                'apiKey': newsApiKey,
-                'keywords': search,
-                'language': 'en'
-            },
-            type: "GET",
-            success: function(data) {
-                console.log(data);
-            }
-        });
-    }
-
+    
     $.ajax({
         url: "https://api.covid19api.com/summary",
         type: "GET",
@@ -150,4 +132,43 @@ $(document).ready(function(){
 
         });
 
+    var newsApiKey = 't8rFTHnPj3cUNdeQhfS0Br8ZEY1UuwCG2E98J5wrg05uXqUj';
+    var className = $(document.body).attr('class');
+    if(className !== 'updates'){
+        var search = 'coronavirus ' + className;
+        var url = 'https://api.currentsapi.services/v1/search?' +
+        'keywords=' + search + '&language=en&' +
+        'apiKey=' + newsApiKey;
+        
+        $.ajax({
+            url: url,
+            type: "GET",
+            success: function(data) {
+                console.log(data['news']);
+                var articleTitles = $('.article-title');
+                var authors = $('.article-author');
+                var images = $('.article-image');
+                var descriptions = $('.article-description');
+                for(l=0; l<=3; l++) {
+                    var title = data['news'][l]['title'];
+                    var author = data['news'][l]['author'];
+                    var image = data['news'][l]['image'];
+                    var description = data['news'][l]['description'];
+                    console.log(image);
+                    if(image!=='None') {
+                        var imgSrc = '<img src="'+image + '"/>';
+                        $(images[l]).append(imgSrc);
+                    }
+                    author = author.replace('-',' ');
+                    articleTitles[l].replaceWith(title.toLocaleString());
+                    authors[l].replaceWith('By: ' + author);
+                    descriptions[l].replaceWith(description.toLocaleString());
+                }
+            },
+            error: function() {
+                alert('Latest News Not Loading');
+            }
+        });
+    }
+    
 });

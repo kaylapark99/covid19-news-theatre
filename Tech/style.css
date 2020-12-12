@@ -6,13 +6,17 @@ body {
     width: 100vw;
     min-height: 100vh;
     margin: 0;
-    padding: 0;
+    padding: 0 !important;
     font-family: bebas-neue-pro, sans-serif;
 }
 
 .container-fluid {
     width: 100vw;
     height: 100%;
+}
+
+.no-padding {
+    padding: 0 !important;
 }
 
 .nav {
@@ -156,7 +160,7 @@ body {
 }
 
 .featured {
-    border-bottom: 4px solid #000027;
+    border-bottom: 3px solid #000027;
 }
 
 .featured h2 {
@@ -165,8 +169,8 @@ body {
 }
 
 .middle-article {
-    border-right: 3px solid #000027;
-    border-left: 3px solid #000027;
+    border-right: 2px solid #A9A9A9;
+    border-left: 2px solid #A9A9A9;
 }
 
 
@@ -208,8 +212,40 @@ body {
     opacity: 1;
 }
 
-
-
 .featured-img {
     width: 100%;
 }
+
+.latest {
+    margin-top: 50px;
+    border-right: 3px solid #000027
+}
+
+.latest-article {
+    border-bottom: 2px solid #A9A9A9;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+
+.latest h2 {
+    margin-left: 15px;
+    margin-bottom: 50px;
+    font-size: 50px;
+}
+
+.latest-content {
+    padding-right: 25px;
+    height: 100%;
+}
+
+.left-article {
+    border-right: 2px solid #A9A9A9;
+}
+
+.article-image img {
+    padding: 15px 0;
+    width: 100%;
+}
+
+
+
