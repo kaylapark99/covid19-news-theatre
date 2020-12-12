@@ -132,6 +132,7 @@ $(document).ready(function(){
 
         });
 
+    //get latest news API
     var newsApiKey = 't8rFTHnPj3cUNdeQhfS0Br8ZEY1UuwCG2E98J5wrg05uXqUj';
     var className = $(document.body).attr('class');
     if(className !== 'updates'){
@@ -144,26 +145,43 @@ $(document).ready(function(){
             url: url,
             type: "GET",
             success: function(data) {
+
                 console.log(data['news']);
-                var articleTitles = $('.article-title');
+
                 var authors = $('.article-author');
                 var images = $('.article-image');
                 var descriptions = $('.article-description');
-                for(l=0; l<=3; l++) {
-                    var title = data['news'][l]['title'];
-                    var author = data['news'][l]['author'];
-                    var image = data['news'][l]['image'];
-                    var description = data['news'][l]['description'];
-                    console.log(image);
+                var dates = $('.article-date');
+                var links = $('.article-link')
+
+                var articleNum = 0;
+                for(l=0; l<=5; l++) {
+                    //api has repeat articles
+                    while(data['news'][articleNum]['title'] === data['news'][articleNum+1]['title']){
+                        articleNum++;
+                    }
+                    var articleURL = data['news'][articleNum]['url'];
+                    var title = data['news'][articleNum]['title'];
+                    var link = '<a href="' + articleURL + '" target="_blank">'+ title + '</a>';
+                    var author = data['news'][articleNum]['author'];
+                    var image = data['news'][articleNum]['image'];
+                    var description = data['news'][articleNum]['description'];
+                    var date = data['news'][articleNum]['published'].substring(0,10);
+                    
                     if(image!=='None') {
                         var imgSrc = '<img src="'+image + '"/>';
                         $(images[l]).append(imgSrc);
                     }
+                   
+                    $(links[l]).append(link);
                     author = author.replace('-',' ');
-                    articleTitles[l].replaceWith(title.toLocaleString());
-                    authors[l].replaceWith('By: ' + author);
-                    descriptions[l].replaceWith(description.toLocaleString());
+                    authors[l].append('By: ' + author);
+                    descriptions[l].append(description.toLocaleString());
+                    dates[l].append('Published: ' + date.toLocaleString());
+                    articleNum++;
                 }
+
+
             },
             error: function() {
                 alert('Latest News Not Loading');

@@ -15,10 +15,6 @@ body {
     height: 100%;
 }
 
-.no-padding {
-    padding: 0 !important;
-}
-
 .nav {
     background-color: #000027;
     color: #ebebff;
@@ -100,9 +96,9 @@ body {
     font-size: 60px;
 }
 
-.data {
+.covid-stats {
     padding-top: 25px;
-    font-size: 20px;;
+    font-size: 20px;
 }
 
 .countries input {
@@ -209,7 +205,7 @@ body {
 }
 
 .article-hover:hover .overlay{
-    opacity: 1;
+    opacity: 0.8;
 }
 
 .featured-img {
@@ -218,18 +214,18 @@ body {
 
 .latest {
     margin-top: 50px;
-    border-right: 3px solid #000027
+    border-right: 3px solid #000027;
+    padding: 0 15px 0 0;
 }
 
 .latest-article {
     border-bottom: 2px solid #A9A9A9;
     padding-bottom: 30px;
-    margin-bottom: 30px;
+    margin-top: 50px;
 }
 
 .latest h2 {
     margin-left: 15px;
-    margin-bottom: 50px;
     font-size: 50px;
 }
 
@@ -242,10 +238,23 @@ body {
     border-right: 2px solid #A9A9A9;
 }
 
+.article-link a {
+    color: black;
+    font-size: 25px;
+}
+
+.article-author {
+    opacity: 0.8;
+    font-weight: 200;
+}
+
 .article-image img {
     padding: 15px 0;
     width: 100%;
 }
 
+.article-date {
+    opacity: 0.5;
+}
 
 
