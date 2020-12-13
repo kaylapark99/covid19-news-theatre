@@ -12,12 +12,20 @@
 		</title>
 	</head>
 
-	<body class='data'>
+	<body class='report'>
 		<div class="container-fluid">
 			<div class="row">
 				<div class="nav col-sm-2 col-12">
 					<div class="nav-container">
-						<img src="Media/covid-logo.png" id="logo">
+                        <img src="Media/covid-logo.png" id="logo">
+                        <div class="death-count">
+							<p>Based off of the total reported deaths today, someone dies 
+								from COVID-19 every <span id="death-time"></span> seconds on average.</p>
+							<p>While viewing this site, this is how many people have had their lives
+								taken from them:
+							</p>
+							<p id="count-dead"></p>
+						</div>
 						<div class="nav-contents">
 							<ul>
                                 <li><a href="index.html">COVID-19 Updates</a></li>
@@ -103,65 +111,76 @@
                             </div>
                         </div>
                     </div>
-                    <div class="latest col-7">
-                        <h2>Latest</h2>
-                        <div class="row" style="margin: auto">
-                            <div class="col-6 latest-article">
-                                <div class="latest-content left-article">
-                                    <div class="article-link"> </div>
-                                    <p class="article-author"></p>
-                                    <div class="article-image"></div>
-                                    <p class="article-description"></p>
-                                    <p class="article-date"></p>
+                    <div class="row">
+                        <div class="latest col-7">
+                            <h2>Latest</h2>
+                            <div class="row" style="margin: auto">
+                                <div class="col-6 latest-article">
+                                    <div class="latest-content left-article">
+                                        <div class="article-link"> </div>
+                                        <p class="article-author"></p>
+                                        <div class="article-image"></div>
+                                        <p class="article-description"></p>
+                                        <p class="article-date"></p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-6 latest-article">
-                                <div class="latest-content">
-                                    <div class="article-link"> </div>
-                                    <p class="article-author"></p>
-                                    <div class="article-image"></div>
-                                    <p class="article-description"></p>
-                                    <p class="article-date"></p>
+                                <div class="col-6 latest-article">
+                                    <div class="latest-content">
+                                        <div class="article-link"> </div>
+                                        <p class="article-author"></p>
+                                        <div class="article-image"></div>
+                                        <p class="article-description"></p>
+                                        <p class="article-date"></p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-6 latest-article">
-                                <div class="latest-content left-article">
-                                    <div class="article-link"> </div>
-                                    <p class="article-author"></p>
-                                    <div class="article-image"></div>
-                                    <p class="article-description"></p>
-                                    <p class="article-date"></p>
+                                <div class="col-6 latest-article">
+                                    <div class="latest-content left-article">
+                                        <div class="article-link"> </div>
+                                        <p class="article-author"></p>
+                                        <div class="article-image"></div>
+                                        <p class="article-description"></p>
+                                        <p class="article-date"></p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-6 latest-article">
-                                <div class="latest-content">
-                                    <div class="article-link"> </div>
-                                    <p class="article-author"></p>
-                                    <div class="article-image"></div>
-                                    <p class="article-description"></p>
-                                    <p class="article-date"></p>
+                                <div class="col-6 latest-article">
+                                    <div class="latest-content">
+                                        <div class="article-link"> </div>
+                                        <p class="article-author"></p>
+                                        <div class="article-image"></div>
+                                        <p class="article-description"></p>
+                                        <p class="article-date"></p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-6 latest-article">
-                                <div class="latest-content left-article">
-                                    <div class="article-link"> </div>
-                                    <p class="article-author"></p>
-                                    <div class="article-image"></div>
-                                    <p class="article-description"></p>
-                                    <p class="article-date"></p>
+                                <div class="col-6 latest-article">
+                                    <div class="latest-content left-article">
+                                        <div class="article-link"> </div>
+                                        <p class="article-author"></p>
+                                        <div class="article-image"></div>
+                                        <p class="article-description"></p>
+                                        <p class="article-date"></p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-6 latest-article">
-                                <div class="latest-content">
-                                    <div class="article-link"> </div>
-                                    <p class="article-author"></p>
-                                    <div class="article-image"></div>
-                                    <p class="article-description"></p>
-                                    <p class="article-date"></p>
+                                <div class="col-6 latest-article">
+                                    <div class="latest-content">
+                                        <div class="article-link"> </div>
+                                        <p class="article-author"></p>
+                                        <div class="article-image"></div>
+                                        <p class="article-description"></p>
+                                        <p class="article-date"></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="videos col-5">
+                            <div class="row featured-vid">
+                                <h2>Featured Videos</h2>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/-dTkzScf2-E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/6NjCitwKJSQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/mngrGucjMTw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
                     </div>
+                   
 				</div>
 			</div>
         </div>

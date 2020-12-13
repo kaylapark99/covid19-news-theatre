@@ -18,13 +18,21 @@
 				<div class="nav col-sm-2 col-12">
 					<div class="nav-container">
 						<img src="Media/covid-logo.png" id="logo">
+						<div class="death-count">
+							<p>Based off of the total reported deaths today, someone dies 
+								from COVID-19 every <span id="death-time"></span> seconds.</p>
+							<p>While viewing this site, this is how many people have had their lives
+								taken from them:
+							</p>
+							<p id="count-dead">0</p>
+						</div>
+						
 						<div class="nav-contents">
 							<ul>
 								<li><a class="clicked">COVID-19 Updates</a></li>
 								<li><a href="reporting.html">Reporting</a></li>
 								<li><a href="vaccine.html">Vaccine</a></li>
 								<li><a href="origin.html">next topic</a></li>
-								<li><a href="#">In Remembrance</a></li>
 							</ul>
 						</div>
 					</div>
@@ -45,7 +53,7 @@
 									<p>Deaths: <span id="total-deaths"></span></p>
 									<p>Recovered: <span id="total-recovered"></span></p>
 								</div>
-								<div class="covid-statstoday-global hide">
+								<div class="covid-stats today-global hide">
 									<p>Cases: <span id="today-cases"></span></p>
 									<p>Deaths: <span id="today-deaths"></span></p>
 									<p>Recovered: <span id="today-recovered"></span></p>
