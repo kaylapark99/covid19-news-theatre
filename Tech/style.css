@@ -271,16 +271,20 @@ body {
     opacity: 0.5;
 }
 
-.videos {
+.vid-tweets {
     margin-top: 50px;
 }
 
 .featured-vid {
     margin-left: 15px;
-    padding-bottom: 35px;
     border-bottom: 2px solid #A9A9A9;
 }
 
-.videos iframe {
+.featured-vid iframe {
     padding: 15px;
+}
+
+.twitter {
+    width: 100%;
+    margin-left: 15px;
 }
