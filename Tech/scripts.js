@@ -1,3 +1,6 @@
+//EVENTUALLY fix problems in issues panel
+//"indicate whether to send a cookie in cross site request by specifying its SameSite attribute"
+
 $(document).ready(function(){
     var countryCodes = {}
     var todayDeaths = 0;
@@ -138,13 +141,15 @@ $(document).ready(function(){
 
 
     //death count per day, how many people die on average 
+    //eventually put inside ajax call? idk if that will work
+    //but if not there is a synchronous warning
     if(todayDeaths !== 0) {
         var perPerson = ((24*60*60)/todayDeaths).toFixed(2);
         var deadCount = $('#count-dead');
         $('#death-time').append(perPerson);
     
         //uncomment to start death count over;
-        localStorage.clear()
+        //localStorage.clear()
         if(localStorage.getItem('dead') === null) {
             localStorage.setItem('dead',0)
         }
@@ -163,7 +168,7 @@ $(document).ready(function(){
     }
     
     else {
-        $('#death-time').append("x").css({"color":"red"});
+        $('#death-time').text("x").css({"color":"red"});
         $('#count-dead').text("Data Unavailable.").css({"color":"red"});
     }
    
@@ -178,14 +183,10 @@ $(document).ready(function(){
         var url = 'https://api.currentsapi.services/v1/search?' +
         'keywords=' + search + '&language=en&' +
         'apiKey=' + newsApiKey;
-        
         $.ajax({
             url: url,
             type: "GET",
             success: function(data) {
-
-                console.log(data['news']);
-
                 var authors = $('.article-author');
                 var images = $('.article-image');
                 var descriptions = $('.article-description');
@@ -208,14 +209,14 @@ $(document).ready(function(){
                     
                     if(image!=='None') {
                         var imgSrc = '<img src="'+image + '"/>';
-                        $(images[l]).append(imgSrc);
+                        $(images[l]).html(imgSrc);
                     }
                 
-                    $(links[l]).append(link);
+                    $(links[l]).html(link);
                     author = author.replace('-',' ');
-                    authors[l].append('By: ' + author);
-                    descriptions[l].append(description.toLocaleString());
-                    dates[l].append('Published: ' + date.toLocaleString());
+                    $(authors[l]).html('By: ' + author);
+                    $(descriptions[l]).html(description.toLocaleString());
+                    $(dates[l]).html('Published: ' + date.toLocaleString());
                     articleNum++;
                 }
 
@@ -223,7 +224,7 @@ $(document).ready(function(){
             },
             error: function() {
                 for(l=0; l<=5; l++) {
-                    $('.article-description')[l].append('Error. Articles not available.');
+                    $('.article-description')[l].text('Error. Articles not available.');
                 }
             }
         });
