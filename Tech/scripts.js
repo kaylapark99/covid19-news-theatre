@@ -138,27 +138,35 @@ $(document).ready(function(){
 
 
     //death count per day, how many people die on average 
-    var perPerson = ((24*60*60)/todayDeaths).toFixed(2);
-    var deadCount = $('#count-dead');
-    $('#death-time').append(perPerson);
-
-    //uncomment to start death count over;
-    //localStorage.clear()
-    if(localStorage.getItem('dead') === null) {
-        localStorage.setItem('dead',0)
+    if(todayDeaths !== 0) {
+        var perPerson = ((24*60*60)/todayDeaths).toFixed(2);
+        var deadCount = $('#count-dead');
+        $('#death-time').append(perPerson);
+    
+        //uncomment to start death count over;
+        localStorage.clear()
+        if(localStorage.getItem('dead') === null) {
+            localStorage.setItem('dead',0)
+        }
+        else {
+            $('#count-dead').text(localStorage.dead);
+        }
+        setTimeout(function countDead(){
+            localStorage.dead = Number(localStorage.getItem('dead')) + 1;
+            deadCount.css({"color":"red","font-size":"40px"});
+            deadCount.text(localStorage.getItem('dead'));
+            setTimeout(function(){
+                deadCount.css({"color":"white","font-size":"20px"});
+            },500);
+            setTimeout(countDead, perPerson*1000);
+        },perPerson*1000);
     }
+    
     else {
-        $('#count-dead').text(localStorage.dead);
+        $('#death-time').append("x").css({"color":"red"});
+        $('#count-dead').text("Data Unavailable.").css({"color":"red"});
     }
-    setTimeout(function countDead(){
-        localStorage.dead = Number(localStorage.getItem('dead')) + 1;
-        deadCount.css({"color":"red","font-size":"40px"});
-        deadCount.text(localStorage.getItem('dead'));
-        setTimeout(function(){
-            deadCount.css({"color":"white","font-size":"20px"});
-        },500);
-        setTimeout(countDead, perPerson*1000);
-    },perPerson*1000);
+   
 
 
 
