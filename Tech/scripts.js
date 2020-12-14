@@ -1,6 +1,20 @@
+//THIS IS WHEN THINGS GET FUN
+function displayDeathNotice(y){
+    $('.popup').css({"visibility":"visible"});
+    $('.container-fluid').css({"filter":"blur(5px)"});
+    $('#popup-caption').text(y);
+}
+
+function closepopup() {
+    $('.popup').css({"visibility":"hidden"});
+    $('.container-fluid').css({"filter":"none"});
+}
+
+//THE TECHNICAL STUFF FOR A 'NORMAL' LOOKING NEWSPAPER
+
 //EVENTUALLY fix problems in issues panel
 //"indicate whether to send a cookie in cross site request by specifying its SameSite attribute"
-
+//eventially reformat code to make it cleaner and more readable
 $(document).ready(function(){
     var countryCodes = {}
     var todayDeaths = 0;
@@ -139,15 +153,26 @@ $(document).ready(function(){
         error: function(){
             alert("Covid API Network Error!")
         }
-
-        
-
     });
 
 
     //death count per day, how many people die on average 
     //eventually put inside ajax call? idk if that will work
     //but if not there is a synchronous warning
+    var popupDict = {
+        3: "The Boston Marathon bombing caused 3 tragic deaths and a nation wide panic. You literally just entered this site, and already 3 people on average have died from this virus...",
+        27: "27 people were murdered during the terrifying Sandy Hook Elementary School shooting in 2012. I remember hearing about these deaths and was absolutely traumatized. The 27 deaths that just occured due to the deadly Coronavirus should scare you. This is not a joke.",
+        60: "Remember the horrific Las Vegas shooting in 2017? It was a traumatic and brutal event that took 60 lives. In the time that you have been on my site, the same amount of people have died from Coronavirus. Yet, I still see people in public without masks.",
+        130: "The November 2015 Paris attacks took 130 lives, traumatizing people around the globe. In that short amount of time you have been on this site, 130 lives were taken, and people seriously have the nerve to complain about not having indoor dining.",
+        294: "294 U.S. soldiers have sacrificed their lives during the entirety of the Gulf War from August 1990 - February 1991. They were fighting for their country and died with dignity. What about the 294 people who just died from COVID? What did they die for?",
+        909: "The Jonestown massacre represents the largest number of American civilian casualities in a single non-natural event. 909 people including 300 children committed mass suicide. So many lives lost in such a short span of time...",
+        1836: "Hurricane Katrina, a Category 5 Atlantic Hurricane, caused $125 billion in damage. But more importantly, 1836 people did not make it to see another day, and neither will the 1836 people who have just passed due to COVID.",
+        2403: "With a first wave of 180 aircrafts, Japan brutally attacked Pearl Harbor causing the deaths of 2403 people. This attack was deadly enough to compell the United States to enter WWII. That many people literally have died while you've been sitting here... what is the U.S. doing about that?",
+        2996: "Never Forget. 9/11, one of the deadliest days in U.S. history... 2996 lives, just gone like that. It should absolutely terrify you that COVID took 2996 lives while you have been looking at my site."
+    };
+    var popupKeys = Object.keys(popupDict);
+
+
     if(todayDeaths !== 0) {
         var perPerson = ((24*60*60)/todayDeaths).toFixed(2);
         var deadCount = $('#count-dead');
@@ -157,14 +182,25 @@ $(document).ready(function(){
         //localStorage.clear()
         if(localStorage.getItem('dead') === null) {
             localStorage.setItem('dead',0)
+            localStorage.setItem('popDictIndex', 0);
         }
         else {
             $('#count-dead').text(localStorage.dead);
         }
+
+
         setTimeout(function countDead(){
             localStorage.dead = Number(localStorage.getItem('dead')) + 1;
+            var storedDeadCount = localStorage.dead;
             deadCount.css({"color":"red","font-size":"40px"});
-            deadCount.text(localStorage.getItem('dead'));
+            deadCount.text(storedDeadCount);
+
+            if(storedDeadCount == popupKeys[localStorage.getItem('popDictIndex')]) {
+                var popIndex = localStorage.getItem('popDictIndex');
+                displayDeathNotice(popupDict[popupKeys[popIndex]]);
+                localStorage.popDictIndex = Number(localStorage.getItem('popDictIndex')) + 1;
+            }
+            
             setTimeout(function(){
                 deadCount.css({"color":"white","font-size":"20px"});
             },500);
@@ -176,8 +212,6 @@ $(document).ready(function(){
         $('#death-time').text("x").css({"color":"red"});
         $('#count-dead').text("Data Unavailable.").css({"color":"red"});
     }
-   
-
 
 
     //get latest news API
@@ -203,7 +237,6 @@ $(document).ready(function(){
                 var articleTitles = [];
                 
                 while(articleCount != 8) {
-                    console.log(data['news'][articleNum]['title']);
                     var title = data['news'][articleNum]['title'];
                     if(!articleTitles.includes(title)){
                         articleTitles.push(title);
@@ -239,3 +272,20 @@ $(document).ready(function(){
     }
     
 });
+
+setTimeout(function(){
+    $('.switch-bad').removeClass('toggle-on');
+    $('.switch-good').addClass('toggle-on');
+
+    $('.switch-bad-end').mouseenter(function () { 
+        $('.switch-bad-end').text('MAKE IT STOP');
+    });
+    $('.switch-bad-end').mouseleave(function () { 
+        $('.switch-bad-end').text('THIS IS NOT A JOKE');
+    });
+    $('.switch-bad-end').click(function () { 
+        $('.switch-good').removeClass('toggle-on');
+        $('.switch-bad').addClass('toggle-on');
+        $('#covid-chart').attr("src", $('#covid-chart').attr("src"));
+    });
+}, 45000);

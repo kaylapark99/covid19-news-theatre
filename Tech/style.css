@@ -50,7 +50,7 @@ body {
 
 .nav-contents li {
     list-style: none;
-    font-size: 25px;
+    font-size: 18px;
 }
 
 .nav-contents li a {
@@ -70,7 +70,7 @@ body {
 
 .death-count p {
     padding: 0 50px;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 #count-dead {
@@ -85,15 +85,18 @@ body {
     opacity: 0.5;
 }
 
+.content {
+    overflow-x: hidden;
+}
 
-.covid-header h2 {
-    font-size: 70px;
+.covid-header h1 {
+    font-size: 60px;
     border-bottom: 10px solid #00004e;
     color: #00004e;
 }
 
 .covid-header p {
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .covid-update-data {
@@ -107,12 +110,12 @@ body {
 
 .global h3, .countries h3 {
     color: #4545ba;
-    font-size: 60px;
+    font-size: 45px;
 }
 
 .covid-stats {
     padding-top: 25px;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .countries input {
@@ -122,7 +125,7 @@ body {
 
 .toggle-global, .toggle-country {
     color: #6262ff;
-    font-size: 25px;
+    font-size: 21px;
     padding-right: 10px;
 }
 
@@ -161,7 +164,7 @@ body {
 }
 
 .page-header h1 {
-    font-size: 100px;
+    font-size: 80px;
     border-bottom: 10px solid #000027;
 }
 
@@ -174,7 +177,7 @@ body {
 }
 
 .featured h2 {
-    font-size: 40px;
+    font-size: 33px;
     margin-bottom: 40px;
 }
 
@@ -187,6 +190,7 @@ body {
 .hover-text {
     position: absolute;
     padding: 20px;
+    font-size: 16px;
     height: 100%;
     width: 100%;
     left: 50%;
@@ -229,7 +233,7 @@ body {
 .latest {
     margin-top: 50px;
     border-right: 3px solid #000027;
-    padding: 0 15px 0 0;
+    padding: 0 10px 0 0;
 }
 
 .latest-article {
@@ -238,9 +242,9 @@ body {
     margin-top: 50px;
 }
 
-.latest h2, .videos h2 {
-    margin-left: 15px;
-    font-size: 50px;
+.latest h2, .vid-tweets h2 {
+    padding-left: 15px;
+    font-size: 40px;
 }
 
 .latest-content {
@@ -254,7 +258,7 @@ body {
 
 .article-link a {
     color: black;
-    font-size: 25px;
+    font-size: 22px;
 }
 
 .article-author {
@@ -276,7 +280,7 @@ body {
 }
 
 .featured-vid {
-    margin-left: 15px;
+    padding-left: 15px;
     border-bottom: 2px solid #A9A9A9;
 }
 
@@ -287,6 +291,48 @@ body {
 .twitter {
     margin-top: 30px;
     width: 100%;
-    margin-left: 15px;
+    margin-left: 10px;
+}
 
+.popup {
+    width: 50vw;
+    height: 50vh;
+    position: fixed;
+    background-color: red;
+    border-radius: 30px;
+    top: 25vh;
+    left: 25vw;
+    visibility: hidden;
+}
+
+.popup-content {
+    padding: 70px;
+}
+
+.popup-content p {
+    font-size: 25px;
+}
+
+#close {
+    color: black;
+    position: absolute;
+    font-size: 20px;
+    bottom: 50px;
+}
+
+.toggle-on {
+    display: none;
+}
+
+.switch-bad {
+    color: red !important;
+}
+
+.funeral {
+    font-size: 30px;
+    color: red;
+}
+
+.switch-bad-end {
+    cursor: pointer;
 }

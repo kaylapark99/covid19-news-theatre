@@ -38,8 +38,9 @@
 					</div>
 				</div>
 				<div class="content col-sm-10 col-12">
-					<div class="covid-header">
-						<h2>COVID-19 PANDEMIC UPDATES</h2>
+					<div class="covid-header page-header">
+						<h1 class="switch-good">COVID-19 PANDEMIC UPDATES</h1>
+						<h1 class="switch-bad toggle-on switch-bad-end">THIS IS NOT A JOKE</h1>
 						<p>Last Updated: <span id="last-update"></span> UTC</p>
 					</div>
 					<div class="covid-update-data row">
@@ -49,14 +50,20 @@
 								<a href="#" class="toggle-global" id="overall-global-btn" onclick="$(this).toggleGlobal('.overall-global','.today-global','#today-global-btn');">Overall</a>
 								<a href="#" class="toggle-global pressed" id="today-global-btn" onclick="$(this).toggleGlobal('.today-global','.overall-global','#overall-global-btn');">Today</a>
 								<div class="covid-stats overall-global">
-									<p>Cases: <span id="total-cases"></span></p>
-									<p>Deaths: <span id="total-deaths"></span></p>
-									<p>Recovered: <span id="total-recovered"></span></p>
+									<p class="switch-good">Cases: <span id="total-cases"></span></p>
+									<p class="switch-bad toggle-on">PEOPLE ARE FUCKING DYING</p>
+									<p class="switch-good">Deaths: <span id="total-deaths"></span></p>
+									<p  class="switch-bad toggle-on">PEOPLE ARE FUCKING DYING</p>
+									<p class="switch-good">Recovered: <span id="total-recovered"></span></p>
+									<p class="switch-bad toggle-on">PEOPLE ARE FUCKING DYING</p>
 								</div>
 								<div class="covid-stats today-global hide">
-									<p>Cases: <span id="today-cases"></span></p>
-									<p>Deaths: <span id="today-deaths"></span></p>
-									<p>Recovered: <span id="today-recovered"></span></p>
+									<p class="switch-good">Cases: <span id="today-cases"></span></p>
+									<p class="switch-bad toggle-on">PEOPLE ARE FUCKING DYING</p>
+									<p class="switch-good">Deaths: <span id="today-deaths"></span></p>
+									<p class="switch-bad toggle-on">PEOPLE ARE FUCKING DYING</p>
+									<p class="switch-good">Recovered: <span id="today-recovered"></span></p>
+									<p class="switch-bad toggle-on">PEOPLE ARE FUCKING DYING</p>
 								</div>
 							</div><div class="countries">
 								<h3>COUNTRY:</h3>
@@ -67,23 +74,36 @@
 								<a href="#" class="toggle-country" id="overall-country-btn" onclick="$(this).toggleGlobal('.overall-country','.today-country','#today-country-btn');">Overall</a>
 								<a href="#" class="toggle-country pressed" id="today-country-btn" onclick="$(this).toggleGlobal('.today-country','.overall-country','#overall-country-btn');">Today</a>
 								<div class="covid-stats overall-country">
-									<p>Cases: <span id="total-country-cases"></span></p>
-									<p>Deaths: <span id="total-country-deaths"></span></p>
-									<p>Recovered: <span id="total-country-recovered"></span></p>
+									<p class="switch-good">Cases: <span id="total-country-cases"></span></p>
+									<p class="switch-bad toggle-on">PEOPLE ARE FUCKING DYING</p>
+									<p class="switch-good">Deaths: <span id="total-country-deaths"></span></p>
+									<p class="switch-bad toggle-on">PEOPLE ARE FUCKING DYING</p>
+									<p class="switch-good">Recovered: <span id="total-country-recovered"></span></p>
+									<p class="switch-bad toggle-on">PEOPLE ARE FUCKING DYING</p>
 								</div>
 								<div class="covid-stats today-country hide">
-									<p>Cases: <span id="today-country-cases"></span></p>
-									<p>Deaths: <span id="today-country-deaths"></span></p>
-									<p>Recovered: <span id="today-country-recovered"></span></p>
+									<p class="switch-good">Cases: <span id="today-country-cases"></span></p>
+									<p class="switch-bad toggle-on">PEOPLE ARE FUCKING DYING</p>
+									<p class="switch-good">Deaths: <span id="today-country-deaths"></span></p>
+									<p class="switch-bad toggle-on">PEOPLE ARE FUCKING DYING</p>
+									<p class="switch-good">Recovered: <span id="today-country-recovered"></span></p>
+									<p class="switch-bad toggle-on">PEOPLE ARE FUCKING DYING</p>
 								</div>
 							</div>
 						</div>
 						<div class="graph col-sm-8 col-12">
-							<iframe src="https://ourworldindata.org/grapher/total-deaths-covid-19" style="width: 100%; height: 600px; border: 3px solid;"></iframe>
+							<iframe style="width: 100%; height: 600px;" src="https://www.youtube.com/embed/_J60fQr0GWo?autoplay=1" class="toggle-on switch-bad" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							<iframe src="https://ourworldindata.org/grapher/total-deaths-covid-19" style="width: 100%; height: 600px; border: 3px solid;" class="switch-good" id="covid-chart"></iframe>
 						</div>
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class="popup">
+            <div class="popup-content">
+                <p id="popup-caption"></p>
+                <a href="#" onclick="closepopup()" id="close">Close</a>
+            </div>     
         </div>
 	</body>
 </html>
